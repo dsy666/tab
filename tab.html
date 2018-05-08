@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style type="text/css">
+        #tab
+        {
+            width: 1000px;
+            height: 800px;
+            padding: 5px;
+        }
+        #tab ul
+        {
+            list-style: none;
+            display: ;
+            width: 1000px;
+            height: 200px;
+            margin-left: 135px;
+        }
+        #tab ul li
+        {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            list-style: none;
+            background: #FFF;
+            cursor: pointer;
+            text-align: center;
+            float: left;
+            border: 1px solid #765BE0;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        #tab ul li.on
+        {
+            border: 1px solid #181717;
+            border-bottom: 1px solid #FBF8F8;
+        }
+        #tab div      
+        {
+            height: 500px;
+            width: 940px;
+            border: 1px solid #181717;
+            margin-top: -165px;
+            margin-left: 165px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+    var myTab = document.getElementById("tab");    
+    var myUl = myTab.getElementsByTagName("ul")[0];
+    var myLi = myUl.getElementsByTagName("li");    
+    var myDiv = myTab.getElementsByTagName("div"); 
+    for(var i = 0; i<myLi.length;i++){
+        myLi[i].index = i;
+        myLi[i].onclick = function(){
+            for(var j = 0; j < myLi.length; j++){
+                myLi[j].setAttribute("class","off");
+                myDiv[j].setAttribute("class","hide");
+            }
+            this.setAttribute("class","on");
+            myDiv[this.index].setAttribute("class","show");
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+    <div id="tab">
+        <ul>
+            <li class="off">1</li>
+            <li class="on">2</li>
+            <li class="off">3</li>
+            <li class="off">4</li>
+            <li class="off">5</li>
+            <li class="off">6</li>
+            <li class="off">7</li>
+        </ul>
+        <div class="hide" id="first"><img src=""></div>
+        <div class="show" id="second"><img src=""></div>
+        <div class="hide" id="third"><img src=""></div>
+        <div class="hide" id="forth"><img src=""></div>
+        <div class="hide" id="fifth"><img src=""></div>
+        <div class="hide" id="sixth"><img src=""></div>
+        <div class="hide" id="seventh"><img src=""></div>
+    </div>
+</body>
+</html>
